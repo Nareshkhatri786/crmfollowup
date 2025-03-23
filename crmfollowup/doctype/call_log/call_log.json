@@ -1,0 +1,149 @@
+{
+  "autoname": "CALL-.YYYY.-.MM.-.#####",
+  "creation": "2023-07-01 12:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "call_section",
+    "call_type",
+    "call_status",
+    "call_date",
+    "call_duration",
+    "cb1",
+    "reference_type",
+    "reference_name",
+    "phone_number",
+    "call_details_section",
+    "notes",
+    "next_action_section",
+    "next_action",
+    "next_action_date",
+    "follow_up_by"
+  ],
+  "fields": [
+    {
+      "fieldname": "call_section",
+      "fieldtype": "Section Break",
+      "label": "Call Information"
+    },
+    {
+      "fieldname": "call_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Call Type",
+      "options": "Outgoing\\nIncoming",
+      "reqd": 1
+    },
+    {
+      "fieldname": "call_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Call Status",
+      "options": "Answered\\nNot Answered\\nBusy\\nVoicemail\\nWrong Number",
+      "reqd": 1
+    },
+    {
+      "fieldname": "call_date",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Call Date & Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "call_duration",
+      "fieldtype": "Int",
+      "label": "Duration (seconds)"
+    },
+    {
+      "fieldname": "cb1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "reference_type",
+      "fieldtype": "Link",
+      "label": "Reference Type",
+      "options": "DocType",
+      "reqd": 1
+    },
+    {
+      "fieldname": "reference_name",
+      "fieldtype": "Dynamic Link",
+      "in_list_view": 1,
+      "label": "Reference Name",
+      "options": "reference_type",
+      "reqd": 1
+    },
+    {
+      "fieldname": "phone_number",
+      "fieldtype": "Data",
+      "label": "Phone Number",
+      "reqd": 1
+    },
+    {
+      "fieldname": "call_details_section",
+      "fieldtype": "Section Break",
+      "label": "Call Details"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text Editor",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "next_action_section",
+      "fieldtype": "Section Break",
+      "label": "Next Action"
+    },
+    {
+      "fieldname": "next_action",
+      "fieldtype": "Select",
+      "label": "Next Action",
+      "options": "None\\nCall Back\\nSend Information\\nSchedule Meeting\\nSend Proposal\\nSend Quote"
+    },
+    {
+      "fieldname": "next_action_date",
+      "fieldtype": "Datetime",
+      "label": "Next Action Date"
+    },
+    {
+      "fieldname": "follow_up_by",
+      "fieldtype": "Link",
+      "label": "Follow up by",
+      "options": "User"
+    }
+  ],
+  "links": [],
+  "modified": "2023-07-01 12:00:00.000000",
+  "module": "CRMFollowup",
+  "name": "Call Log",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Sales User",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
